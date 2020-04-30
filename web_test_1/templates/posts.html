@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+
+{% block head %}
+
+<hr>
+<h2>enter the content here</h2>
+<div>
+<form action = '/posts' method = 'POST'>
+	Name: <input type = 'text' name = 'title' id = 'title'>
+	<br>
+	Content: <input type = 'text' name = 'content' id = 'content'>
+	<br>
+	<input type = 'submit' value = 'post'>
+</form>
+</div>
+<hr>
+{% endblock %}
+{% block posts%}
+	<h1>posts</h1>
+	
+{% for post in content %}
+	<hr>      
+	<h3> Name: {{post.name}}</h3>			
+	<h3> Content: {{post.age}}</h3>
+	<h3> Department: {{post.department}}</h3>
+	<hr>
+{% endfor %}	
+{%endblock%}
